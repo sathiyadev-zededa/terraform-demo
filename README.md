@@ -7,8 +7,6 @@ This repository, `sathiyadev-zededa/terraform-demo`, provides a Terraform config
 - [Repository Structure](#repository-structure)
 - [Setup Instructions](#setup-instructions)
 - [Usage](#usage)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
 
 ## Prerequisites
 - **Terraform**: Version 2.5.0 or higher.
@@ -34,26 +32,23 @@ terraform-demo/
    git clone https://github.com/sathiyadev-zededa/terraform-demo.git
    cd terraform-demo
 2. **Configuration Parameter**
-```bash
-node1 = "node1"
-node2 = "node2"
-serial1 = "your-actual-serial-1"
-serial2 = "your-actual-serial-2"
-project_name = "your-project-name"
+  node1 = "node1"
+  node2 = "node2"
+  serial1 = "your-actual-serial-1"
+  serial2 = "your-actual-serial-2"
+  project_name = "your-project-name"
 4. **Initialize Terraform:**
 terraform init
 5. **Exclude State Files:**
 Ensure .gitignore includes:
-```bash
-terraform.tfstate
-terraform.tfstate.*.backup
-.terraform/
-.terraform.lock.hcl
+  terraform.tfstate
+  terraform.tfstate.*.backup
+  .terraform/
+  .terraform.lock.hcl
 
 ## Usage
 
-Plan the Deployment:
-```bash
+**Plan the Deployment:**
 terraform plan
 Review the plan to ensure it creates:
 
@@ -62,5 +57,13 @@ Network instances (node1-eth0, node2-eth0)
 Applications (ppe-detection-node1, ppe-detection-node2)
 
 
-Apply the Configuration:
+**Apply the Configuration:**
+terraform apply
+
+**View Outputs:**
+Check node names and IDs:
+bashterraform output node_names
+terraform output node_ids
+Destroy Resources (if needed):
+berraform destroy
 
