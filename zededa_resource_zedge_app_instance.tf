@@ -1,7 +1,7 @@
 locals {
     netinst_names = {
-        "node1" = zedcloud_network_instance.node1_instance.name
-        "node2" = zedcloud_network_instance.node2_instance.name
+        "node1" = module.node1_network_instance
+        "node2" = module.node2_network_instance
     }
 }
 
@@ -21,7 +21,7 @@ resource "zedcloud_application_instance" "deploy_application" {
       default_net_instance = false
       ipaddr = ""
       macaddr = ""
-      netinstname = local.netinst_names[each.key]
+      netinstname = local.netinst_names[each.key].name
       privateip = false
     }
     drives {
