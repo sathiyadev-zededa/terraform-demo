@@ -28,9 +28,7 @@ resource "zedcloud_image" "ppe_detection" {
    project_access_list = [ zedcloud_project.zededa_project.id]
 }
 
-resource "zedcloud_network_instance" "node1_instance" {
- 
-
+/*resource "zedcloud_network_instance" "node1_instance" {
     port = "eth0"
     name = "node1-eth0"
     title = "node1-eth0"
@@ -72,7 +70,47 @@ resource "zedcloud_network_instance" "node2_instance" {
         subnet = "10.30.0.0/24"
     }
   
+}*/
+module "node1_network_instance" {
+  source = "./modules/zedcloud_network_instance"
+
+  device_id = zedcloud_edgenode.deploy_nodes["node1"].id
+  name      = "node1-eth0"
+  title     = "node1-eth0"
+  port      = "eth0"
+  kind      = "NETWORK_INSTANCE_KIND_LOCAL"
+  type      = "NETWORK_INSTANCE_DHCP_TYPE_V4"
+
+  ip_range = {
+    start   = "10.20.0.20"
+    end     = "10.20.0.30"
+    gateway = "10.20.0.1"
+    subnet  = "10.20.0.0/24"
+    dns     = ["1.1.1.1", "8.8.8.8"]
+    domain  = ""
+  }
 }
+
+module "node2_network_instance" {
+  source = "./modules/zedcloud_network_instance"
+
+  device_id = zedcloud_edgenode.deploy_nodes["node2"].id
+  name      = "node2-eth0"
+  title     = "node2-eth0"
+  port      = "eth0"
+  kind      = "NETWORK_INSTANCE_KIND_LOCAL"
+  type      = "NETWORK_INSTANCE_DHCP_TYPE_V4"
+
+  ip_range = {
+    start   = "10.20.0.20"
+    end     = "10.20.0.30"
+    gateway = "10.20.0.1"
+    subnet  = "10.20.0.0/24"
+    dns     = ["1.1.1.1", "8.8.8.8"]
+    domain  = ""
+  }
+}
+
 
 resource "zedcloud_application" "ppe_detection_demo" {
     name = "ppe_detection_demo"
