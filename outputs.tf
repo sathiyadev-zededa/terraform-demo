@@ -1,5 +1,5 @@
 output "node_names" {
-    value = keys(local.nodes)
+  value = keys(local.nodes)
 }
 
 output "node_ids" {

@@ -17,7 +17,7 @@ variable "node1" {
 variable "node2" {
   description = "edge node name2"
   default     = "node2"
-  type        = string 
+  type        = string
 }
 
 variable "serial1" {
@@ -39,49 +39,49 @@ variable "project_name" {
 }
 
 variable "interface" {
-    description = "physical-interface-name"
-    default = "eth0"
-    type= string
+  description = "physical-interface-name"
+  default     = "eth0"
+  type        = string
 }
 
 variable "network" {
-    description = "adapter configuration"
-    default = "dhcp-demo-config"
-    type= string
+  description = "adapter configuration"
+  default     = "dhcp-demo-config"
+  type        = string
 }
 
 variable "model_id" {
-    description = "ZedVirtualDevice model id"
-    default = "01c0c06a-b5ce-4f19-be9d-d7fd341556cd"
-    type = string
+  description = "ZedVirtualDevice model id"
+  default     = "01c0c06a-b5ce-4f19-be9d-d7fd341556cd"
+  type        = string
 }
 
 variable "onboarding_key" {
-    description = "default oboarding key"
-    default = ""
-    type = string
+  description = "default oboarding key"
+  default     = ""
+  type        = string
 }
 
 variable "dispatch_url" {
-    description = "dispatch url"
-    default = ""
-    type = string
+  description = "dispatch url"
+  default     = ""
+  type        = string
 }
 
 variable "datastore_cidr" {
-    default = ""
-    description = "datastore cidr"
-    type = string
+  default     = ""
+  description = "datastore cidr"
+  type        = string
 }
 
 variable "datastore_username" {
-    default = ""
-    description = "datastore username"
-    type = string
+  default     = ""
+  description = "datastore username"
+  type        = string
 }
 
 variable "datastore_access_key" {
-    default = ""
-    description = "datastore access key"
-    type = string
+  default     = ""
+  description = "datastore access key"
+  type        = string
 }
