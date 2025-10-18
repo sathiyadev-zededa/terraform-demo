@@ -16,6 +16,7 @@ This repository, `sathiyadev-zededa/terraform-demo`, provides a Terraform config
   - `TF_VAR_zedcloud_token`: Your ZEDEDA API token.
 
 ## Repository structure
+'
 terraform-demo/
 ├── provider.tf                   # Provider and variable definitions
 ├── zededa_resource_edge_nodes.tf  # Edge nodes and network instances
@@ -23,7 +24,7 @@ terraform-demo/
 ├── output.tf                 # Output definitions (node names and IDs)
 ├── terraform.tfvars          # Variable values (customize as needed)
 └── .gitignore                # Excludes state files and Terraform artifacts
-
+'
 
 ## Setup Instructions
 
